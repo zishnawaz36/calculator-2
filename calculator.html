@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style> 
+.container{
+padding-left: 50%;
+padding-top: 10%;
+margin-right: 5%;
+}
+button{
+    margin:5px;
+}
+</style>
+    
+</head>
+<body>
+    <div class="container">
+        <input id="calme" type="text" placeholder="calculateme"></input>
+        <div class="row"><br>
+            <button class="button" onclick="addtoinput('0')">0</button>
+            <button class="button" onclick="clearinput()">AC</button>
+            <button class="button" onclick="addtoinput('+')">+</button>
+        </div>
+        <div class="row"><br>
+            <button class="button" onclick="addtoinput('7')">7</button>
+            <button class="button" onclick="addtoinput('8')">8</button>
+            <button class="button" onclick="addtoinput('9')">9</button>
+        </div>
+        <div class="row"><br>
+            <button class="button"onclick="addtoinput('4')">4</button>
+            <button class="button"onclick="addtoinput('5')">5</button>
+            <button class="button" onclick="addtoinput('6')">6</button>
+        </div>
+        <div class="row"><br>
+            <button class="button" onclick="addtoinput('1')">1</button>
+            <button class="button" onclick="addtoinput('2')">2</button>
+            <button class="button"onclick="addtoinput('3')">3</button>
+        </div>
+        <div class="row"><br>
+            <button class="button"onclick="addtoinput('*')">*</button>
+            <button class="button"onclick="addtoinput('/')">/</button>
+            <button class="button"onclick="addtoinput('=')">=</button>
+        </div>
+        <br>
+        <button id onclick="calculate()" ="calculate">Calculator</button><br>
+    </div>
+    <script>
+     function clearinput(){
+        document.getElementById("calme").value="";
+     }
+     function addtoinput(value){
+        document.getElementById("calme").value +=value;
+     }
+     function calculate(){
+        const input=document.getElementById("calme").value;
+        const result=eval(input);
+        document.getElementById("calme").value=result;
+     }
+    </script>
+</body>
+</html>
